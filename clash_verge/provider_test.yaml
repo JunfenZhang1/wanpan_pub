@@ -8,7 +8,7 @@ proxy-providers:
       additional-prefix: "[provider1]"
 
   provider2:
-    url: "https://raw-a3f.pages.dev/JunfenZhang1/wanpan_pub/main/clash_verge/sub_high_slow.yaml?tpken=chino0930"
+    url: "https://raw-a3f.pages.dev/JunfenZhang1/wanpan_pub/main/clash_verge/sub_high_slow.yaml?token=chino0930"
     type: http
     interval: 86400
     health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
