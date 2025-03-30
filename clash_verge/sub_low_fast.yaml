@@ -372,8 +372,8 @@ proxy-groups:
       https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
     type: select
     proxies:
-      - 故障转移all
       - 故障转移
+      - 故障转移all
       - 自动选择
       - 自动选择all
       - 手动切换
