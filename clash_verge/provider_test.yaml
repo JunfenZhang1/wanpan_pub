@@ -8,7 +8,7 @@ proxy-providers:
       additional-prefix: "[provider1]"
 
   provider2:
-    url: ""
+    url: "https://raw-a3f.pages.dev/JunfenZhang1/wanpan_pub/main/clash_verge/sub_high_slow.yaml?tpken=chino0930"
     type: http
     interval: 86400
     health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
@@ -19,18 +19,7 @@ proxy-groups:
   - name: 节点选择
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
     type: select
-    proxies:
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [故障转移all, 故障转移, 自动选择, 自动选择all, 手动切换, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 手动切换
     icon: https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
     include-all: true
@@ -41,14 +30,21 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    proxies:
-      - 狮城节点
-      - 香港节点
-      - 台湾节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
+    proxies: [狮城, 台湾, 日本, 美国, 韩国, 香港, 其它]
+  - name: 自动选择all
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
   - name: 故障转移
+    icon: https://www.clashverge.dev/assets/icons/ambulance.svg
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 180
+    proxies: [狮城, 台湾, 日本, 美国, 韩国, 香港, 其它]
+  - name: 故障转移all
     icon: https://www.clashverge.dev/assets/icons/ambulance.svg
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -65,257 +61,86 @@ proxy-groups:
   - name: 电报消息
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: OpenAi
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 油管视频
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 奈飞视频
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
     filters:
       - "(?i)NF|奈飞|解锁|Netflix|NETFLIX|Media|MITM"
-  - name: 巴哈姆特
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
-    type: select
-    proxies:
-      - 台湾节点
-      - 节点选择
-      - 手动切换
-      - DIRECT
-  - name: 哔哩哔哩
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
-    type: select
-    proxies:
-      - 全球直连
-      - 台湾节点
-      - 香港节点
   - name: 国外媒体
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ForeignMedia.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
     filters:
       - "(?i)MITM|emby|Emby"
-  - name: 国内媒体
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/DomesticMedia.png
-    type: select
-    proxies:
-      - DIRECT
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
   - name: 谷歌FCM
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 微软Bing
     icon: https://testingcf.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/bing.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 微软云盘
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/OneDrive.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 微软服务
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
-  - name: 苹果服务
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
-    type: select
-    proxies:
-      - DIRECT
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 游戏平台
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
     type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - 手动切换
-      - 故障转移
-      - 负债均衡
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - DIRECT
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
+  - name: 漏网之鱼
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
+    type: select
+    proxies: [节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
+  - name: 巴哈姆特
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
+    type: select
+    proxies: [台湾, 节点选择, 手动切换, DIRECT]
+  - name: 哔哩哔哩
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
+    type: select
+    proxies: [DIRECT, 台湾, 香港, 节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 日本, 美国, 韩国, 其它, 其它s]
+  - name: 国内媒体
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/DomesticMedia.png
+    type: select
+    proxies: [DIRECT, 节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s]
+  - name: 苹果服务
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
+    type: select
+    proxies: [DIRECT, 节点选择, 自动选择, 自动选择all, 手动切换, 故障转移, 故障转移all, 负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s]
   - name: 网易音乐
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netease_Music.png
     type: select
-    proxies:
-      - DIRECT
-      - 节点选择
-      - 自动选择
+    proxies: [DIRECT, 节点选择, 自动选择, 自动选择all]
     filters:
       - "(?i)网易|音乐|解锁|Music|NetEase"
   - name: 全球直连
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
     type: select
-    proxies:
-      - DIRECT
-      - 节点选择
-      - 自动选择
+    proxies: [DIRECT, 节点选择, 自动选择, 自动选择all]
   - name: 广告拦截
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png
     type: select
-    proxies:
-      - REJECT
-      - DIRECT
+    proxies: [REJECT, DIRECT]
   - name: 应用净化
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png
     type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 漏网之鱼
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
-    type: select
-    proxies:
-      - 节点选择
-      - 自动选择
-      - DIRECT
-      - 香港节点
-      - 台湾节点
-      - 狮城节点
-      - 日本节点
-      - 美国节点
-      - 韩国节点
-      - 手动切换
-  - name: 香港节点
+    proxies: [REJECT, DIRECT]
+  - name: 香港
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     type: load-balance
     strategy: consistent-hashing
@@ -324,16 +149,16 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 日本节点
+  - name: 日本
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
     type: load-balance
     strategy: consistent-hashing
     include-all: true
-    filter: (?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|Tokyo|NRT|KIX|日
+    filter: (?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|Tokyo|NRT|KIX
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 美国节点
+  - name: 美国
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
     type: load-balance
     strategy: consistent-hashing
@@ -342,7 +167,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
-  - name: 台湾节点
+  - name: 台湾
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png
     type: load-balance
     strategy: consistent-hashing
@@ -351,7 +176,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 狮城节点
+  - name: 狮城
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
     type: load-balance
     strategy: consistent-hashing
@@ -360,7 +185,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 韩国节点
+  - name: 韩国
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
     type: load-balance
     strategy: consistent-hashing
@@ -369,22 +194,22 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  # - name: 其它地区
-  #   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/un.svg
-  #   type: load-balance
-  #   strategy: consistent-hashing
-  #   include-all: true
-  #   exclude-type: direct
-  #   filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN)).*"
-  #   url: http://www.gstatic.com/generate_204
-  #   interval: 300
-  #   tolerance: 50
-  # - name: 其它地区s
-  #   icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/un.svg
-  #   type: select
-  #   include-all: true
-  #   exclude-type: direct
-  #   filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN)).*"
+  - name: 其它
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/un.svg
+    type: load-balance
+    strategy: consistent-hashing
+    include-all: true
+    exclude-type: direct
+    filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|jp|japan|新|sg|singapore|美|us|unitedstates|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN)).*"
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 其它s
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/un.svg
+    type: select
+    include-all: true
+    exclude-type: direct
+    filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|jp|japan|新|sg|singapore|美|us|unitedstates|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN)).*"
 
 rule-providers:
   me_direct:
