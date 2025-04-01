@@ -1,24 +1,9 @@
-proxy-providers:
-  provider0:
-    url: "https://raw-a3f.pages.dev/JunfenZhang1/wanpan/main/clash-verge/hy2.yaml?token=chino0930"
-    type: http
-    interval: 2160
-    health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[0]"
-  provider1:
-    url: "https://SOS.CMLiussss.net/auto"
-    type: http
-    interval: 2160
-    health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
-    override:
-      additional-prefix: "[1]"
-
 proxy-groups:
   - name: 🚀节点选择
     type: select
-    proxies: [🔯故障转移, 🔯故障转移all, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🔮负债均衡, 🍃ip净化, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
+    proxies: [🔯故障转移, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🍃ip净化, vps, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: ☑️手动切换
+    proxies: [♻️自动选择, ♻️自动选择all, 🔯故障转移, vps, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
     include-all: true
     type: select
   - name: ♻️自动选择
@@ -26,7 +11,7 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-    proxies: [狮城, 台湾, 日本, 美国, 韩国, 香港, 其它]
+    proxies: [vps, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它]
   - name: ♻️自动选择all
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -37,33 +22,21 @@ proxy-groups:
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 180
-    proxies: [狮城, 台湾, 日本, 美国, 韩国, 香港, 其它]
-  - name: 🔯故障转移all
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 180
-    include-all: true
-  - name: 🔮负债均衡
-    strategy: consistent-hashing
-    type: load-balance
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 150
-    include-all: true
+    proxies: [vps, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它]
   - name: 🍃ip净化
     type: select
     include-all: true
-    proxies: [☑️手动切换, 🔯故障转移, 🔯故障转移all, ♻️自动选择, ♻️自动选择all, 🔮负债均衡, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s]
+    proxies: [☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, vps, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s]
     filter: "(?i)^(?!.*(?:🇭🇰狮城, 台湾, 日本, 美国, 韩国, 香港, 其它|🇨🇳|港|hk|hongkong|中|cn)).*"
   - name: 🤖Ai
     type: select
-    proxies: [🚀节点选择, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🔯故障转移, 🔯故障转移all, 🔮负债均衡, 🍃ip净化, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
+    proxies: [🚀节点选择, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🔯故障转移, 🍃ip净化, vps, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 📺哔哩哔哩
     type: select
-    proxies: [DIRECT, 台湾, 香港, 🚀节点选择, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🔯故障转移, 🔯故障转移all, 🔮负债均衡, 🍃ip净化, 狮城, 日本, 美国, 韩国, 其它, 其它s]
+    proxies: [DIRECT, 台湾, 香港, 🚀节点选择, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🔯故障转移, 🍃ip净化, vps, 狮城, 日本, 美国, 韩国, 其它, 其它s]
   - name: 🐟漏网之鱼
     type: select
-    proxies: [🚀节点选择, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🔯故障转移, 🔯故障转移all, 🔮负债均衡, 🍃ip净化, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
+    proxies: [🚀节点选择, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🔯故障转移, 🍃ip净化, vps, 狮城, 台湾, 日本, 美国, 韩国, 香港, 其它, 其它s, DIRECT]
   - name: 🎯全球直连
     type: select
     proxies: [DIRECT, 🚀节点选择, ♻️自动选择, ♻️自动选择all]
@@ -73,10 +46,17 @@ proxy-groups:
   - name: 🍃应用净化
     type: select
     proxies: [REJECT, DIRECT]
+  - name: vps
+    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    type: select
+    include-all: true
+    filter: (?i)[0]|hysteria2
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
   - name: 香港
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
     include-all: true
     filter: (?i)港|HK|hk|Hong Kong|HongKong|hongkong|HKG|HKIA|HKG|Kowloon|新界|九龙|中环|上环|尖沙咀|湾仔|铜锣湾|旺角|油麻地|荃湾|沙田|大埔|屯门|元朗|西贡|东涌
     url: http://www.gstatic.com/generate_204
@@ -84,8 +64,7 @@ proxy-groups:
     tolerance: 50
   - name: 日本
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
     include-all: true
     filter: (?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|Tokyo|NRT|KIX
     url: http://www.gstatic.com/generate_204
@@ -93,8 +72,7 @@ proxy-groups:
     tolerance: 50
   - name: 美国
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
     include-all: true
     filter: (?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|United States|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC
     url: http://www.gstatic.com/generate_204
@@ -102,8 +80,7 @@ proxy-groups:
     tolerance: 150
   - name: 台湾
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
     include-all: true
     filter: (?i)台|新北|彰化|TW|Taiwan|TPE|KHH
     url: http://www.gstatic.com/generate_204
@@ -111,8 +88,7 @@ proxy-groups:
     tolerance: 50
   - name: 狮城
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
     include-all: true
     filter: (?i)新加坡|坡|狮城|SG|Singapore|SIN
     url: http://www.gstatic.com/generate_204
@@ -120,8 +96,7 @@ proxy-groups:
     tolerance: 50
   - name: 韩国
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Korea.png
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
     include-all: true
     filter: (?i)KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN
     url: http://www.gstatic.com/generate_204
@@ -129,8 +104,7 @@ proxy-groups:
     tolerance: 50
   - name: 其它
     icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/un.svg
-    type: load-balance
-    strategy: consistent-hashing
+    type: url-test
     include-all: true
     exclude-type: direct
     filter: "(?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|jp|japan|新|sg|singapore|美|us|unitedstates|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN|中|cn)).*"
