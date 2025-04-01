@@ -63,7 +63,6 @@ proxy-groups:
     type: select
     proxies: [REJECT, DIRECT]
   - name: vps
-    icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     type: select
     include-all: true
     filter: (?i)[0]|hysteria2
