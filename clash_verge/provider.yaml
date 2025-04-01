@@ -1,3 +1,19 @@
+proxy-providers:
+  provider0:
+    url: "https://raw-a3f.pages.dev/JunfenZhang1/wanpan/main/clash-verge/hy2.yaml?token=chino0930"
+    type: http
+    interval: 2160
+    health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
+    override:
+      additional-prefix: "[0]"
+  provider1:
+    url: "https://SOS.CMLiussss.net/auto"
+    type: http
+    interval: 2160
+    health-check: {enable: true,url: "https://www.gstatic.com/generate_204",interval: 300}
+    override:
+      additional-prefix: "[1]"
+
 proxy-groups:
   - name: 🚀节点选择
     type: select
