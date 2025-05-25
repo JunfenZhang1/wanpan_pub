@@ -17,58 +17,57 @@ proxy-providers:
 proxy-groups:
   - name: 🚀节点选择
     type: select
-    proxies: [🔯故障转移, ♻️自动选择, ♻️自动选择all, ☑️手动切换, 🍃ip净化, vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, 其它s, DIRECT]
+    proxies: [🔯故障转移, ☑️手动切换, ♻️自动选择, ♻️自动选择all, 其它s, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, DIRECT]
+  - name: 🍃ip净化
+    type: select
+    include-all: true
+    proxies: [🚀节点选择, 🔯故障转移, ☑️手动切换, ♻️自动选择, ♻️自动选择all, 其它s, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它]
+    filter: "(?i)^(?!.*(?:🇭🇰狮城, 台湾, 日本, 美国, 韩国, 香港, 其它|🇨🇳|港|hk|hongkong|中|cn)).*"
   - name: ☑️手动切换
-    proxies: [🔯故障转移, ♻️自动选择, ♻️自动选择all, vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, 其它s, DIRECT]
+    proxies: [🔯故障转移, ♻️自动选择, ♻️自动选择all, 其它s, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它]
     include-all: true
     type: select
+  - name: 其它s
+    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/un.svg
+    type: select
+    include-all: true
+    exclude-type: direct
+    filter: (?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|jp|japan|新|sg|singapore|美|us|unitedstates|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN|中|cn|\[0\]|hysteria2)).*
   - name: ♻️自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
-    interval: 300
+    interval: 180
     tolerance: 50
-    proxies: [vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它]
+    proxies: [美国, 狮城, 韩国, 日本, 台湾, 香港, 其它]
   - name: ♻️自动选择all
     type: url-test
     url: http://www.gstatic.com/generate_204
-    interval: 300
+    interval: 180
     tolerance: 50
     include-all: true
   - name: 🔯故障转移
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 180
-    proxies: [vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它]
-  - name: 🍃ip净化
-    type: select
-    include-all: true
-    proxies: [☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, 其它s]
-    filter: "(?i)^(?!.*(?:🇭🇰狮城, 台湾, 日本, 美国, 韩国, 香港, 其它|🇨🇳|港|hk|hongkong|中|cn)).*"
+    proxies: [美国, 狮城, 韩国, 日本, 台湾, 香港, 其它]
   - name: 🤖Ai
     type: select
-    proxies: [🚀节点选择, ☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, 🍃ip净化, vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, 其它s, DIRECT]
+    proxies: [🚀节点选择, ☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, 🍃ip净化, 其它s, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, DIRECT]
   - name: 📺哔哩哔哩
     type: select
-    proxies: [DIRECT, 台湾, 香港, ☑️手动切换, 🔯故障转移, 🚀节点选择, ♻️自动选择, ♻️自动选择all, 🍃ip净化, vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, 其它s]
+    proxies: [DIRECT, 台湾, 香港, 🚀节点选择, ☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, 🍃ip净化, 其它s, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它]
   - name: 🐟漏网之鱼
     type: select
-    proxies: [🚀节点选择, ☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, 🍃ip净化, vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, 其它s, DIRECT]
+    proxies: [🚀节点选择, ☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, 🍃ip净化, 其它s, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, DIRECT]
   - name: 🎯全球直连
     type: select
-    proxies: [DIRECT, 🚀节点选择, ☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, 🍃ip净化, vps, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它, 其它s]
+    proxies: [DIRECT, 🚀节点选择, ☑️手动切换, 🔯故障转移, ♻️自动选择, ♻️自动选择all, 🍃ip净化, 其它s, 美国, 狮城, 韩国, 日本, 台湾, 香港, 其它]
   - name: 🛑广告拦截
     type: select
     proxies: [REJECT, DIRECT]
   - name: 🍃应用净化
     type: select
     proxies: [REJECT, DIRECT]
-  - name: vps
-    type: select
-    include-all: true
-    filter: (?i)\[0\]|hysteria2
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
   - name: 香港
     icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     type: url-test
@@ -126,12 +125,6 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 其它s
-    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/flags/un.svg
-    type: select
-    include-all: true
-    exclude-type: direct
-    filter: (?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|jp|japan|新|sg|singapore|美|us|unitedstates|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN|中|cn|\[0\]|hysteria2)).*
 
 rule-providers:
   me_direct:
